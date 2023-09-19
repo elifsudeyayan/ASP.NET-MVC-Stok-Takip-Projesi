@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Update";
+}
+@model Product
+<h1>Ürün Güncelleme <span style='font-size:35px;'>&#128209;</span></h1>
+<form asp-action="Update" asp-controller="Products" method="post">
+    
+    
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Ürün ismi <span style='font-size:20px;'>&#128289;</span> </label>
+        <input type="text" class="form-control" asp-for="Name">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Price" class="form-label">Ürün Fiyatı <span style='font-size:20px;'>&#128184;</span></label>
+        <input type="number" class="form-control" asp-for="Price">
+    </div>
+    <div class="mb-3">
+        <label asp-for="Color" class="form-label">Ürün Rengi <span style='font-size:20px;'>&#127752;</span> </label>
+        <input type="text" class="form-control" asp-for="Color">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Stock" class="form-label">Ürün Stok <span style='font-size:20px;'>&#128202;</span> </label>
+        <input type="number" class="form-control" asp-for="Stock">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Güncelle <span style='font-size:20px;'>&#128260;</span> </button>
+</form>
+
+

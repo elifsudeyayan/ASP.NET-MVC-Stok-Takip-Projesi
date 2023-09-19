@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Product>
+<h1>Ürünler<span style='font-size:40px;'>&#128209;</span> </h1>
+
+@if(TempData["status"]!=null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["status"]
+    </div>
+}
+<a asp-controller="products" asp-action="add"> Ürün Ekle <span style='font-size:20px;'>&#128151;</span> </a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+            <th>Renk</th>
+            <th>İşlem</th>
+        </tr>
+
+
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Stock</td>
+                <td>@item.Color</td>
+                <td><a asp-controller="products" asp-action="remove" asp-route-id="@item.Id">Sil <span style='font-size:18px;'>&#128686;</span></a></td>
+
+                <td>
+                    <a asp-controller="products" asp-action="update" asp-route-id="@item.Id">Güncelle <span style='font-size:18px;'>&#128260;</span></a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
